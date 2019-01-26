@@ -13,8 +13,17 @@ class Game extends Component {
       };
     
 
-    clickedImage = () => {
-        console.log("hello")
+    clickedImage = event => {
+        console.log(event.target.id)
+        if(this.state.clicked[event.target.id]){
+            console.log("you lose")
+            this.state.clicked={};
+            this.state.score=0;
+        } else {
+            this.state.clicked[event.target.id]=1;
+            this.state.score ++
+            console.log(this.state.score)
+        }
     }
     render(){
         return(

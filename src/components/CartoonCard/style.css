@@ -11,6 +11,6 @@
 img{
   height:150px;
 }
-img:hover {
+.img-container:hover {
   cursor: pointer;
 }
