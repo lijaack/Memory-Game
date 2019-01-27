@@ -4,7 +4,7 @@ import "./style.css";
 function CartoonCard(props) {
   return (
       <div  data-id={props.id} onClick={props.onClick} className="img-container">
-        <img alt={props.name} src={props.image}/>
+        <img data-id={props.id} alt={props.name} src={props.image}/>
       </div>
   );
 }
