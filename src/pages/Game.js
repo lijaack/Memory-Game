@@ -66,7 +66,8 @@ class Game extends Component {
             highscore={this.state.highscore}
             />
             <Jumbotron>
-                <h1>Memory Game</h1>
+                <h1>Cartoons Memory Game</h1>
+                <h2>Click the same character twice and you lose!</h2>
             </Jumbotron>
             <Container>
                 <Row>

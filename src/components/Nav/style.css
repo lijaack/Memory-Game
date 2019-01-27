@@ -1,0 +1,12 @@
+.nav-color{
+    background-color: black;
+}
+
+.baloo{
+    font-family: 'Baloo Thambi', cursive;
+    font-size:3vh
+}
+
+.no-decor{
+    text-decoration: none !important;
+}
