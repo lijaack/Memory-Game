@@ -14,27 +14,30 @@ class Game extends Component {
     
     componentDidMount() {
         this.setState({cartoons: Cartoon})
-        console.log(this.state.cartoons)
     }
     
     clickedImage = event => {
         console.log(event.target.id)
         if(this.state.clicked[event.target.id]){
-            console.log("you lose")
             this.setState({clicked: {}});
             this.setState({score: 0});
         } else {
             this.setState({clicked: {...this.state.clicked, [event.target.id]:1}});
             this.setState({score: this.state.score + 1});
-            console.log(this.state.score)
             this.shuffleCartoons()
         }
     }
 
     shuffleCartoons = () => {
         for(var i=0; i < this.state.cartoons.length; i++){
-            var random = Math.ceil(Math.random(this.state.cartoons.length))
-            console.log(random)
+            var random = Math.floor(Math.random() * this.state.cartoons.length)
+            console.log("random number: " + random)
+            var hold = this.state.cartoons[i]
+            this.state.cartoons[i] = this.state.cartoons[random];
+            this.state.cartoons[random] = hold;
+            console.log(this.state.cartoons)
+
+
         }
     }
 
