@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../Grid";
 
 function Nav(props) {
   return (
-    <nav className="navbar-dark bg-primary">
+    <nav className="navbar-dark">
     <Container>
       <Row>
         <Col size="4">
@@ -18,7 +18,7 @@ function Nav(props) {
         </Col>
         <Col size="4">
           <p>
-            Score: {props.score}
+            Score: {props.score}      High score: {props.highscore}
           </p>
         </Col>
       </Row>

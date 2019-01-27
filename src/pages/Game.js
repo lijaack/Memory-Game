@@ -9,6 +9,7 @@ class Game extends Component {
     state = {
         cartoons: [] ,
         score: 0,
+        highscore: 0,
         clicked: {},
         message: ""
     };
@@ -18,18 +19,21 @@ class Game extends Component {
     }
     
     clickedImage = event => {
-        console.log(event.target.id)
+        console.log(event.target.dataset.id)
         this.setState({message: ""})
-        if(this.state.clicked[event.target.id]){
+        if(this.state.clicked[event.target.dataset.id]){
             this.setState({clicked: {}});
             this.setState({score: 0});
             this.setState({message: "you lose"})
         } else {
-            this.setState({clicked: {...this.state.clicked, [event.target.id]:1}});
-            this.setState({score: this.state.score + 1});
-            this.shuffleCartoons(this.state.cartoons)
+            this.setState({score: this.state.score+1});
+            this.setState({clicked: {...this.state.clicked, [event.target.dataset.id]:1}});
+            this.shuffleCartoons(this.state.cartoons);
             this.checkWin();
+            this.checkHighScore();
         }
+
+
     }
 
     shuffleCartoons = cartoons => {
@@ -43,8 +47,13 @@ class Game extends Component {
     }
 
     checkWin = () => {
-        if (this.state.score === 12){
+        if (this.state.score + 1 === 12){
             this.setState({message: "you win"})
+        }
+    }
+    checkHighScore = ()=>{
+        if (this.state.score + 1 > this.state.highscore){
+            this.setState({highscore: this.state.score + 1})
         }
     }
 
@@ -54,6 +63,7 @@ class Game extends Component {
             <Nav
             message={this.state.message}
             score={this.state.score}
+            highscore={this.state.highscore}
             />
             <Jumbotron>
                 <h1>Memory Game</h1>
