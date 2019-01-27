@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Nav from "../components/Nav";
-import Jumbotron from "../components/Jumbotron";
-import { Col, Row, Container } from "../components/Grid";
-import Cartoon from "../cartoon.json";
-import CartoonCard from "../components/CartoonCard";
+import Nav from "./components/Nav";
+import Jumbotron from "./components/Jumbotron";
+import { Col, Row, Container } from "./components/Grid";
+import Cartoon from "./cartoon.json";
+import CartoonCard from "./components/CartoonCard";
 
 class Game extends Component {
     state = {
