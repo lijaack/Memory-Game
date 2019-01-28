@@ -4,7 +4,7 @@ import "./style.css";
 
 function Nav(props) {
   return (
-    <nav className="nav-color">
+    <nav className="nav-color navbar-fixed-top ">
     <Container>
       <Row>
         <Col size="4">
